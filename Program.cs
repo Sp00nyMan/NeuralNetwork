@@ -8,9 +8,10 @@ namespace NeuralNetwork
         static void Main()
         {
             //Создания сета тренировочных данных на основе изображений, названных в формате "цифраНаИзображении_номерИзображения.png" и лежащих по пути path
-            var trainingData = GetTrainingData(@"C:\Users\mrsto\YandexDisk\NeuralNetwork\image demos", 1, 3, 5);
+            (List<List<double>> inputs, List<List<double>> outputs) trainingData = GetTrainingData(@"C:\Users\mrsto\YandexDisk\NeuralNetwork\image demos", 1, 3, 5);
             
-            List<int> layersInfo = new List<int>() { 10, 5, 12 }; //Информация о структуре сети
+            //Информация о структуре сети
+            List<int> layersInfo = new List<int>() { 10, 5, 12 }; 
             
             //Тренировка
             NeuralNetwork neuralNetwork = NetworksAcademy.GetTrainedNetwork(trainingData.inputs, trainingData.outputs, 
